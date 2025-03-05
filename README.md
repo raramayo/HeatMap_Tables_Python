@@ -1,4 +1,4 @@
-[![alt_text](https://zenodo.org/badge/DOI/10.5281/zenodo.14967827.svg)](https://doi.org/10.5281/zenodo.14967827)
+[![alt_text](https://zenodo.org/badge/DOI/10.5281/zenodo.14977228.svg)](https://doi.org/10.5281/zenodo.14977228)
 # HeatMap_Tables
 ![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Heat_Map_Tables_Logo.png)
 

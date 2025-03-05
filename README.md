@@ -1,6 +1,6 @@
 [![alt_text](https://zenodo.org/badge/DOI/10.5281/zenodo.14967827.svg)](https://doi.org/10.5281/zenodo.14967827)
 # HeatMap_Tables
-![alt text](https://github.com/raramayo/Taxonomy_Fasta_Headers_Python/blob/main/Images/Taxonomy_Fasta_Headers_Logo.png)
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Heat_Map_Tables_Logo.png)
 
 ## Overview:
 
@@ -129,7 +129,7 @@
 	```
   + Which will result in the following table:
 
-Table_00_01.png
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_01.png)
 
 + The script will read your data, generate the heatmap,
     and save it to a file with the same base name as your data
@@ -151,7 +151,7 @@ Table_00_01.png
 	```
   + Which will result in the following table:
 
-  Table_00_02.png
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_02.png)
 
   + The ```smaller``` option is designed to reduce the font size of the resulting
     printed table.
@@ -174,7 +174,7 @@ Table_00_01.png
 	```
   + Which will result in the following table:
 
-  Table_00_03.png
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_03.png)
 
   + The same consideration would have to be taken into account if we wanted to use
     the ```--palette coolwarm``` flag. In this case, the command:
@@ -189,7 +189,7 @@ Table_00_01.png
 	```
 	+ Would result in the following table:
 
-	Table_00_04.png
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_04.png)
 
   + In contrast, the command:
     ```
@@ -202,7 +202,7 @@ Table_00_01.png
 	```
   + Which results in the following table:
 
-  Table_00_05.png
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_05.png)
 
   + Does not need any correction, althugh, the command:
     ```
@@ -216,7 +216,7 @@ Table_00_01.png
 	 ```
    + Would result in the following table:
 
-   Table_00_06.png
+![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_06.png)
 
   + Arguably improves the font color representation of the cells' numerical values.
 

@@ -217,7 +217,7 @@
 
 ![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_06.png)
 
-  + Arguably improves the font color representation of the cells' numerical values.
+  + Which, arguably improves the font color representation of the cells' numerical values.
 
 ## Script_Flags:
 

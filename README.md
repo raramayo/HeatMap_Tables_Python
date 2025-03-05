@@ -83,15 +83,14 @@
     ```
   + Save your data in a TSV file (tab-separated values) with headers.
   + The first column should be used as the index.
-  + Example:
+  + Example (```Table_00.tsv```):
     ```
-	GRCh38.111 <tab> Gencode.v45
-	protein_coding <tab> 20073 <tab> 20073
-	lncRNA <tab> 19370 <tab> 19370
-	processed_pseudogene <tab> 10145 <tab> 10145
-	unprocessed_pseudogene <tab> 2604 <tab> 2604
-	misc_RNA <tab> 2217 <tab> 2217
-	...
+    Record_01 <tab> Record_02 <tab> Record03  <tab> Record_04
+    Field_01  <tab> 8000000   <tab> 700000    <tab> 50000 <tab> 2000
+    Field_02  <tab> 500000	  <tab> 20000     <tab> 2000  <tab> 50
+    Field_03  <tab> 50000     <tab> 25000     <tab> 20    <tab> 2
+    Field_04  <tab> 2000000   <tab> 200000    <tab> 20000 <tab> 2000
+    Field_05  <tab> 4000000   <tab> 400000    <tab> 40000 <tab> 4000
 	```
 + ### Understand the Command-Line Options:
   + Title (```-t```/```--title```):
@@ -100,7 +99,7 @@
   + Data (```-d```/```--data```):
     + The path to your TSV file containing numeric data.
   + Format (```-f```/```--format```):
-    + Specify the output file format. Default is png. Use pdf if desired.
+    + Specify the output file format. Default is ```png```. Use pdf if desired.
   + Resolution (```-r```/```--resolution```):
     + For PNG outputs, specify the DPI (dots per inch).
 	+ The default is 300 DPI (this is ignored if you choose PDF).
@@ -133,7 +132,7 @@
 
 + The script will read your data, generate the heatmap,
     and save it to a file with the same base name as your data
-	file but with the appropriate extension (either .png or .pdf).
+	file but with the appropriate extension (either ```.png``` or ```.pdf```).
   + Review Your Heatmap:
     + Open the generated file to view your heatmap.
     + The heatmap will have dynamic text color based on the data values,
@@ -156,9 +155,9 @@
   + The ```smaller``` option is designed to reduce the font size of the resulting
     printed table.
   + This options should be used to indicate the script that the input data contains
-    a large number of fields and records. In order to fit more fields and records
-	into the printed table, the script will then reduce the font size of the numbers
-	printed into each cell.
+    a large number of fields and records.
+  + In order to fit more fields and records into the printed table, the script will
+	then reduce the font size of the numbers printed into each cell.
   + To use a different palette, you might need to adjust the font color using the
     ```--correction``` flag.
   + For example, in order to use the ```--palette viridis```, we would have to correct
@@ -204,7 +203,7 @@
 
 ![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_05.png)
 
-  + Does not need any correction, althugh, the command:
+  + Does not need any correction, although, the command:
     ```
 	 python3 Heatmap_Tables.py \
 	 -t "HeatMap Tables\nExample" \

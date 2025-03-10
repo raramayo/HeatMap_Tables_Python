@@ -26,7 +26,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------------
 Version Number:
-Version: 1.0.0
+Version: 1.0.1
 --------------------------------------------------------------------------------
 """
 
@@ -41,8 +41,8 @@ import sys
 #-------------------------------------------------------------------------------
 # Define script name and version information
 script_name = os.path.basename(sys.argv[0])
-script_version = "1.0.0"
-current_version_date = "DATE:2025/03/05"          # Script version date
+script_version = "1.0.1"
+current_version_date = "DATE:2025/03/10"          # Script version date
 #-------------------------------------------------------------------------------
 
 def main():

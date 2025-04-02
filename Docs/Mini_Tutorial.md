@@ -3,7 +3,7 @@
 
 ## How to Use the Script to Generate Heat Map Tables
 + ### Prepare Your Environment:
-  + Ensure you have Python 3 installed.
+  + Ensure you have `Python 3` installed.
   + Install required libraries if not already available:
     ```
     pip install matplotlib pandas seaborn
@@ -55,7 +55,8 @@
 	```
   + Which will result in the following table:
 
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_01.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_01.png" width="400" height="400" style="display: block; margin: 0 auto">
 
 + The script will read your data, generate the heatmap,
     and save it to a file with the same base name as your data
@@ -77,7 +78,8 @@
 	```
   + Which will result in the following table:
 
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_02.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_02.png" width="400" height="400" style="display: block; margin: 0 auto">
 
   + The ```smaller``` option is designed to reduce the font size of the resulting
     printed table.
@@ -100,7 +102,8 @@
 	```
   + Which will result in the following table:
 
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_03.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_03.png" width="400" height="400" style="display: block; margin: 0 auto">
 
   + The same consideration would have to be taken into account if we wanted to use
     the ```--palette coolwarm``` flag. In this case, the command:
@@ -115,7 +118,8 @@
 	```
 	+ Would result in the following table:
 
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_04.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_04.png" width="400" height="400" style="display: block; margin: 0 auto">
 
   + In contrast, the command:
     ```
@@ -128,7 +132,8 @@
 	```
   + Which results in the following table:
 
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_05.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_05.png" width="400" height="400" style="display: block; margin: 0 auto">
 
   + Does not need any correction, although, the command:
     ```
@@ -142,18 +147,23 @@
 	 ```
    + Would result in the following table:
 
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_06.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_06.png" width="400" height="400" style="display: block; margin: 0 auto">
 
   + Which, arguably improves the font color representation of the cells' numerical values.
 
 ## Repository:
 
-	--------------------------------------------------------------------------------
-    https://github.com/raramayo/HeatMap_Tables_Python
-	--------------------------------------------------------------------------------
+<pre>
+--------------------------------------------------------------------------------
+See: <a href="https://github.com/raramayo/HeatMap_Tables_Python" target="_blank">HeatMap_Tables_Python</a>
+--------------------------------------------------------------------------------
+</pre>
 
 ## Issues:
 
-	--------------------------------------------------------------------------------
-    https://github.com/raramayo/HeatMap_Tables_Python/issues
-	--------------------------------------------------------------------------------
+<pre>
+--------------------------------------------------------------------------------
+See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/issues" target="_blank">HeatMap_Tables_Python_Issues</a>
+--------------------------------------------------------------------------------
+</pre>

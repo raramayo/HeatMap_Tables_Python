@@ -26,7 +26,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------------
 Version Number:
-Version: 1.0.1
+Version: 1.0.2
 --------------------------------------------------------------------------------
 """
 
@@ -41,8 +41,8 @@ import sys
 #-------------------------------------------------------------------------------
 # Define script name and version information
 script_name = os.path.basename(sys.argv[0])
-script_version = "1.0.1"
-current_version_date = "DATE:2025/03/10"          # Script version date
+script_version = "1.0.2"
+current_version_date = "DATE:2025/04/02"          # Script version date
 #-------------------------------------------------------------------------------
 
 def main():
@@ -127,6 +127,11 @@ def main():
     resolution = args.resolution
     correction = args.correction
     palette = args.palette                        # Selected color palette
+
+    # Check if the data file exists and is readable
+    if not os.path.exists(data_file) or not os.access(data_file, os.R_OK):
+        print(f"[Error] The data file '{data_file}' does not exist or is not readable.")
+        sys.exit(1)
 
     # Load the data from the provided TSV file
     try:

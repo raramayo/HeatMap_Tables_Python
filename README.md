@@ -1,6 +1,7 @@
 [![alt_text](https://zenodo.org/badge/DOI/10.5281/zenodo.14977228.svg)](https://doi.org/10.5281/zenodo.14977228)
 # HeatMap_Tables
-![alt text](https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Heat_Map_Tables_Logo.png)
+<p align="center">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Heat_Map_Tables_Logo.png" width="400" height="400" style="display: block; margin: 0 auto">
 
 ## Overview:
 
@@ -45,9 +46,9 @@
 ## Authorship:
 
     --------------------------------------------------------------------------------
-	Author:                          Rodolfo Aramayo
-    Work_Email:                      raramayo@tamu.edu
-    Personal_Email:                  rodolfo@aramayo.org
+	Author:         Rodolfo Aramayo
+    Work_Email:     raramayo@tamu.edu
+    Personal_Email: rodolfo@aramayo.org
     --------------------------------------------------------------------------------
 
 ## Copyright:
@@ -70,95 +71,126 @@
 ## Script_Version:
 
 	--------------------------------------------------------------------------------
-	v1.0.1
+	v1.0.2
 	--------------------------------------------------------------------------------
+
+## Script_Logic:
+
+<pre>
+--------------------------------------------------------------------------------
+See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Code_Overview.md" target="_blank">Code_Overview.md</a>
+--------------------------------------------------------------------------------
+</pre>
 
 ## Script_Usage:
 
-	--------------------------------------------------------------------------------
-	See Mini_Tutorial.md
-	--------------------------------------------------------------------------------
+<pre>
+--------------------------------------------------------------------------------
+See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Mini_Tutorial.md" target="_blank">Mini_Tutorial.md</a>
+--------------------------------------------------------------------------------
+</pre>
 
 ## Script_Flags:
 
 	--------------------------------------------------------------------------------
-	FLAG:                            "-t", "--title"
-    REQUIRED:                        "Yes"
-    FORMAT:                          "Alphanumeric String"
-    DEFAULT:                         "No default"
-    HELP:                            "Title for the heatmap (use '\\n' for new lines)"
+	FLAG:           "-t", "--title"
+    REQUIRED:       Yes
+    FORMAT:         Alphanumeric String
+    DEFAULT:        No default
+    HELP:           Title for the heatmap (use '\\n' for new lines)
+	----------------------------------------------------------------
+	FLAG:           "-d", "--data"
+    REQUIRED:       Yes
+    FORMAT:         Alphanumeric String
+    DEFAULT:        No default
+    HELP:           Path to the TSV file containing numeric data with headers
+	----------------------------------------------------------------
+    FLAG:           "-f", "--format"
+    REQUIRED:       No
+    FORMAT:         String
+	CHOICES:        png, pdf
+    DEFAULT:        png
+    HELP:           Output file format (default: png)
+	----------------------------------------------------------------
+    FLAG:           "-r", "--resolution"
+    REQUIRED:       No
+    FORMAT:         Integer
+    DEFAULT:        300
+    HELP:           Resolution for PNG output in DPI (default: 300, ignored for PDF)
 	--------------------------------------------------------------------------------
-	FLAG:                            "-d", "--data"
-    REQUIRED:                        "Yes"
-    FORMAT:                          "Alphanumeric String"
-    DEFAULT:                         "No default"
-    HELP:                            "Path to the TSV file containing numeric data with headers"
-	--------------------------------------------------------------------------------
-    FLAG:                            "-f", "--format"
-    REQUIRED:                        "No"
-    FORMAT:                          "String"
-	CHOICES:                         "png", "pdf"
-    DEFAULT:                         "png"
-    HELP:                            "Output file format (default: png)"
-	--------------------------------------------------------------------------------
-    FLAG:                            "-r", "--resolution"
-    REQUIRED:                        "No"
-    FORMAT:                          "Integer"
-    DEFAULT:                         "300"
-    HELP:                            "Resolution for PNG output in DPI (default: 300, ignored for PDF)"
-	--------------------------------------------------------------------------------
-    FLAG:                            "-s", "--size"
-    REQUIRED:                        "No"
-	FORMAT:                          "String"
-    CHOICES:                         "small, large"
-    HELP:                            "Override preset font sizes (optional)"
-	--------------------------------------------------------------------------------
-    FLAG:                            "-c", "--correction"
-    REQUIRED:                        "Yes"
-	FORMAT:                          "Float"
-    DEFAULT:                         "2"
-    HELP:                            "Font color mean correction value (default: 2)"
-	--------------------------------------------------------------------------------
-    FLAG:                            "-p", "--palette"
-    REQUIRED:                        "No"
-	FORMAT:                          "Alphanumeric String"
-    CHOICES:                         "'Blues', 'viridis', 'coolwarm', 'YlGnBu'"
-	DEFAULT:                         "Blues"
-    HELP:                            "Color scheme for the heatmap (default: Blues).
-	--------------------------------------------------------------------------------
-    FLAG:                            "-v", "--version"
-    REQUIRED:                        "No"
-    ACTION:                          "version"
-    FORMAT:                          "Alphanumeric String"
-    HELP:                            "Show program version's number and exit"
+    FLAG:           "-s", "--size"
+    REQUIRED:       No
+	FORMAT:         String
+    CHOICES:        small, large
+    HELP:           Override preset font sizes (optional)
+	---------------------------------------------------------------
+    FLAG:           "-c", "--correction"
+    REQUIRED:       Yes
+	FORMAT:         Float
+    DEFAULT:        2
+    HELP:           Font color mean correction value (default: 2)
+	---------------------------------------------------------------
+    FLAG:           "-p", "--palette"
+    REQUIRED:       No
+	FORMAT:         Alphanumeric String
+    CHOICES:        'Blues', 'viridis', 'coolwarm', 'YlGnBu'
+	DEFAULT:        'Blues'
+    HELP:           Color scheme for the heatmap.
+	---------------------------------------------------------------
+    FLAG:           "-v", "--version"
+    REQUIRED:       No
+    ACTION:         version
+    FORMAT:         Alphanumeric String
+    HELP:           Show program version's number and exit
 	--------------------------------------------------------------------------------
 
 ## Dependencies:
 
 	--------------------------------------------------------------------------------
-    Python3:                         Required (see: https://www.python.org/downloads/)
-	Matplotlib:                      Required (see: https://matplotlib.org/)
-	Pandas:                          Required (see: https://pandas.pydata.org/)
-	Seaborn:                         Required (see: https://seaborn.pydata.org/)
+    Python3:        Required:
+	                https://www.python.org/downloads/
+	Matplotlib:     Required:
+	                https://matplotlib.org/
+				    https://pypi.org/project/matplotlib/
+	Pandas:         Required:
+	                https://pandas.pydata.org/docs/index.html
+					https://pypi.org/project/pandas/
+	Seaborn:        Required:
+	                https://seaborn.pydata.org/
+                    https://pypi.org/project/seaborn/
 	--------------------------------------------------------------------------------
 
 ## Development/Testing Environment:
 
 	--------------------------------------------------------------------------------
-    Distributor ID:                  Apple, Inc.
-    Description:                     Apple M1 Max
-    Release:                         15.3.1
-    Codename:                        Sequoia
+	Distributor ID: Apple, Inc.
+	Description:    Apple M1 Max
+	Release:        15.3.1
+	Codename:       Sequoia
+
+	Script was tested with:
+                    | Python Version | matplotlib | pandas | seaborn |
+                    |----------------|------------|--------|---------|
+                    | 3.8.20         | 3.7.5      | 2.0.3  | 0.13.2  |
+                    | 3.9.21         | 3.9.4      | 2.2.3  | 0.13.2  |
+                    | 3.10.16        | 3.10.1     | 2.2.3  | 0.13.2  |
+                    | 3.11.11        | 3.10.1     | 2.2.3  | 0.13.2  |
+                    | 3.12.9         | 3.10.1     | 2.2.3  | 0.13.2  |
+                    | 3.13.2         | 3.10.1     | 2.2.3  | 0.13.2  |
 	--------------------------------------------------------------------------------
 
 ## Repository:
 
-	--------------------------------------------------------------------------------
-    https://github.com/raramayo/HeatMap_Tables_Python
-	--------------------------------------------------------------------------------
+<pre>
+--------------------------------------------------------------------------------
+See: <a href="https://github.com/raramayo/HeatMap_Tables_Python" target="_blank">HeatMap_Tables_Python</a>
+--------------------------------------------------------------------------------
+</pre>
 
 ## Issues:
 
-	--------------------------------------------------------------------------------
-    https://github.com/raramayo/HeatMap_Tables_Python/issues
-	--------------------------------------------------------------------------------
+<pre>
+--------------------------------------------------------------------------------
+See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/issues" target="_blank">HeatMap_Tables_Python_Issues</a>
+--------------------------------------------------------------------------------
+</pre>

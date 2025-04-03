@@ -133,9 +133,31 @@ See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/M
     FLAG:           "-p", "--palette"
     REQUIRED:       No
 	FORMAT:         Alphanumeric String
-    CHOICES:        'Blues', 'viridis', 'coolwarm', 'YlGnBu'
+    CHOICES:        'Blues', 'viridis', 'coolwarm', 'YlGnBu', 'RdYlGn', 'bwr', 'seismic'
 	DEFAULT:        'Blues'
     HELP:           Color scheme for the heatmap.
+	---------------------------------------------------------------
+    FLAG:           "--normalize_rows"
+	REQUIRED:       No
+	FORMAT:         Alphanumeric String
+	ACTION:         "Store_True"
+    CHOICES:        "Omitting the flag:  == "False""
+                    "Providing the flag: == "True""
+	HELP:           Normalize each row independently (min-max scaling)
+	---------------------------------------------------------------
+    FLAG:           "--normalize_columns"
+	REQUIRED:       No
+	FORMAT:         Alphanumeric String
+	ACTION:         "Store_True"
+    CHOICES:        "Omitting the flag:  == "False""
+                    "Providing the flag: == "True""
+	HELP:           Normalize each column independently (min-max scaling)
+	---------------------------------------------------------------
+    FLAG:           "--cell_font_size"
+	REQUIRED:       No
+	FORMAT:         Integer
+	DEFAULT:        12
+	HELP:           Override cell annotation font size (e.g., 20)
 	---------------------------------------------------------------
     FLAG:           "-v", "--version"
     REQUIRED:       No

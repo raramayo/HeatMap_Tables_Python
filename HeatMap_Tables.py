@@ -3,14 +3,15 @@
 --------------------------------------------------------------------------------
 HeatMap_Tables Script
 --------------------------------------------------------------------------------
-Author:                            Rodolfo Aramayo
-Work_Email:                        raramayo@tamu.edu
-Personal_Email:                    rodolfo@aramayo.org
+Author:             Rodolfo Aramayo
+Work_Email:         raramayo@tamu.edu
+Personal_Email:     rodolfo@aramayo.org
 --------------------------------------------------------------------------------
 Overview:
 This script generates a heatmap from a TSV file containing numeric data.
 It auto-adjusts fonts and figure sizes based on the data dimensions,
-applies dynamic text color corrections, and saves the heatmap in PNG or PDF format.
+applies dynamic text color corrections, supports independent row or column
+normalization, and saves the heatmap in PNG or PDF format.
 --------------------------------------------------------------------------------
 Copyright:
 This program is free software: you can redistribute it and/or modify it under
@@ -42,7 +43,7 @@ import sys
 # Define script name and version information
 script_name = os.path.basename(sys.argv[0])
 script_version = "1.0.2"
-current_version_date = "DATE:2025/04/02"          # Script version date
+current_version_date = "DATE:2025/04/03"          # Script version date
 #-------------------------------------------------------------------------------
 
 def main():
@@ -105,9 +106,29 @@ def main():
         "-p",
         "--palette",
         type=str,
-        choices=["Blues", "viridis", "coolwarm", "YlGnBu"],
+        choices=["Blues", "viridis", "coolwarm", "YlGnBu", "RdYlGn", "bwr", "seismic"],
         default="Blues",
-        help="Color scheme for the heatmap (default: Blues). Choices: 'Blues', 'viridis', 'coolwarm', 'YlGnBu'"
+        help="Color scheme for the heatmap (default: Blues)."
+             " Choices: 'Blues', 'viridis', 'coolwarm', 'YlGnBu', 'RdYlGn', 'bwr', 'seismic'"
+    )
+    # Option to normalize rows independently
+    parser.add_argument(
+        "--normalize_rows",
+        action="store_true",
+        help="Normalize each row independently (min-max scaling)"
+    )
+    # Option to normalize columns independently
+    parser.add_argument(
+        "--normalize_columns",
+        action="store_true",
+        help="Normalize each column independently (min-max scaling)"
+    )
+    # Option to override cell annotation font size
+    parser.add_argument(
+        "--cell_font_size",
+        type=int,
+        default=None,
+        help="Override cell annotation font size (e.g., 20)"
     )
     # Version flag to show script version and exit
     parser.add_argument(
@@ -161,6 +182,26 @@ def main():
         print(f"[Error] Data processing failed: {e}")
         sys.exit(1)
 
+    # Save a copy for annotations (original values remain unmodified)
+    original_values = df_numerical.copy()
+
+    # Apply normalization if requested
+    if args.normalize_rows:
+        # Row min-max normalization with safe division
+        row_min = df_numerical.min(axis=1)
+        row_max = df_numerical.max(axis=1)
+        row_range = row_max - row_min
+        # Replace zeros in row_range to avoid division by zero
+        row_range[row_range == 0] = 1
+        df_numerical = df_numerical.sub(row_min, axis=0).div(row_range, axis=0)
+    if args.normalize_columns:
+        # Column min-max normalization with safe division
+        col_min = df_numerical.min()
+        col_max = df_numerical.max()
+        col_range = col_max - col_min
+        col_range[col_range == 0] = 1
+        df_numerical = (df_numerical - col_min) / col_range
+
     # Determine dimensions of the data to auto-scale figure and fonts
     n_rows, n_cols = df_numerical.shape
     # Auto-detect whether to use "large" settings based on data dimensions
@@ -184,6 +225,10 @@ def main():
         label_fontsize = 12
         tick_fontsize = 12
 
+    # Override annotation font size if specified by user
+    if args.cell_font_size is not None:
+        annot_kws = {"size": args.cell_font_size}
+
     # Set the overall font scale for seaborn plots
     sns.set(font_scale=font_scale)
 
@@ -202,8 +247,8 @@ def main():
     try:
         heatmap = sns.heatmap(
             df_numerical,
-            annot=True,                           # Show data values in each cell
-            fmt=".1f",                            # Format numbers with one decimal place
+            annot=original_values,                # Show original data values in each cell
+            fmt=".2f",                            # Format numbers with two decimal places
             cmap=palette,                         # Use the selected color palette
             linewidths=0.5,                       # Line width between cells
             cbar_kws={"label": "Count"},          # Colorbar label
@@ -220,7 +265,7 @@ def main():
             elif value > threshold_value_adjusted:
                 text.set_color("black")           # Moderately high values get black text
             else:
-                text.set_color("darkblue")        # Lower values use dark blue
+                text.set_color("white")           # Lower values get white text
 
         # Set row labels (y-axis) to italic
         for text in heatmap.get_yticklabels():

@@ -77,7 +77,8 @@
   + This will produce the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_01_Blues.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_01_Blues.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `Blues`, No Normalization.
 
   + The `-f` or `--format` option request the table to be generated in `png` format at a `300 dpi` resolution,
@@ -102,7 +103,8 @@ Color Palette: `Blues`, No Normalization.
   + Which results in the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_02_Blues_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_02_Blues_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `Blues`, Normalized by Rows.
 
 + ### Using the `Blues` Color Palette With Columns Normalization:
@@ -119,7 +121,8 @@ Color Palette: `Blues`, Normalized by Rows.
   + Which results in the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_03_Blues_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_03_Blues_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `Blues`, Normalized by Columns.
 
   + Similarly, commands equivalent to the ones above can be issued to generate tables without any normalization, or normalized by either rows or columns using different color palettes.
@@ -137,7 +140,8 @@ Color Palette: `Blues`, Normalized by Columns.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_04_viridis.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_04_viridis.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `viridis`, No Normalization.
 
 + ### Using the `viridis` Color Palette With Rows Normalization:
@@ -154,7 +158,8 @@ Color Palette: `viridis`, No Normalization.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_05_viridis_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_05_viridis_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `viridis`, Normalized by Rows.
 
 + ### Using the `viridis` Color Palette With Columns Normalization:
@@ -170,7 +175,8 @@ Color Palette: `viridis`, Normalized by Rows.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_06_viridis_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_06_viridis_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `viridis`, Normalized by Columns.
 
 + ### Using the `coolwarm` Color Palette Without Any Normalization:
@@ -186,7 +192,8 @@ Color Palette: `viridis`, Normalized by Columns.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_07_coolwarm.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_07_coolwarm.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `coolwarm`, No Normalization.
 
 + ### Using the `coolwarm` Color Palette With Rows Normalization:
@@ -203,7 +210,8 @@ Color Palette: `coolwarm`, No Normalization.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_08_coolwarm_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_08_coolwarm_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `coolwarm`, Normalized by Rows.
 
 + ### Using the `coolwarm` Color Palette With Columns Normalization:
@@ -219,7 +227,8 @@ Color Palette: `coolwarm`, Normalized by Rows.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_09_coolwarm_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_09_coolwarm_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `coolwarm`, Normalized by Columns.
 
 + ### Using the `YlGnBu` Color Palette Without Any Normalization:
@@ -235,7 +244,8 @@ Color Palette: `coolwarm`, Normalized by Columns.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_10_YlGnBu.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_10_YlGnBu.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `YlGnBu`, No Normalization.
 
 + ### Using the `YlGnBu` Color Palette With Rows Normalization:
@@ -252,7 +262,8 @@ Color Palette: `YlGnBu`, No Normalization.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_11_YlGnBu_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_11_YlGnBu_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `YlGnBu`, Normalized by Rows.
 
 + ### Using the `YlGnBu` Color Palette With Columns Normalization:
@@ -268,7 +279,8 @@ Color Palette: `YlGnBu`, Normalized by Rows.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_12_YlGnBu_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_12_YlGnBu_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `YlGnBu`, Normalized by Columns.
 
 + ### Using the `RdYlGn` Color Palette Without Any Normalization:
@@ -284,7 +296,8 @@ Color Palette: `YlGnBu`, Normalized by Columns.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_13_RdYlGn.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_13_RdYlGn.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `RdYlGn`, No Normalization.
 
 + ### Using the `RdYlGn` Color Palette With Rows Normalization:
@@ -301,7 +314,8 @@ Color Palette: `RdYlGn`, No Normalization.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_14_RdYlGn_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_14_RdYlGn_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `RdYlGn`, Normalized by Rows.
 
 + ### Using the `RdYlGn` Color Palette With Columns Normalization:
@@ -317,7 +331,8 @@ Color Palette: `RdYlGn`, Normalized by Rows.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_15_RdYlGn_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_15_RdYlGn_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `RdYlGn`, Normalized by Columns.
 
 + ### Using the `bwr` Color Palette Without Any Normalization:
@@ -333,7 +348,8 @@ Color Palette: `RdYlGn`, Normalized by Columns.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_16_bwr.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_16_bwr.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `bwr`, No Normalization.
 
 + ### Using the `bwr` Color Palette With Rows Normalization:
@@ -350,7 +366,8 @@ Color Palette: `bwr`, No Normalization.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_17_bwr_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_17_bwr_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `bwr`, Normalized by Rows.
 
 + ### Using the `bwr` Color Palette With Columns Normalization:
@@ -366,7 +383,8 @@ Color Palette: `bwr`, Normalized by Rows.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_18_bwr_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_18_bwr_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `bwr`, Normalized by Columns.
 
 + ### Using the `seismic` Color Palette Without Any Normalization:
@@ -382,7 +400,8 @@ Color Palette: `bwr`, Normalized by Columns.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_19_seismic.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_19_seismic.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `seismic`, No Normalization.
 
 + ### Using the `seismic` Color Palette With Rows Normalization:
@@ -399,7 +418,8 @@ Color Palette: `seismic`, No Normalization.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_20_seismic_nrow.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_20_seismic_nrow.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `seismic`, Normalized by Rows.
 
 + ### Using the `seismic` Color Palette With Columns Normalization:
@@ -415,7 +435,8 @@ Color Palette: `seismic`, Normalized by Rows.
   + Produces the following table:
 
 <p align="center">
-<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_21_seismic_ncol.png" width="400" height="400" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_21_seismic_ncol.png" width="600" height="600" style="display: block; margin: 0 auto">
+<p align="center">
 Color Palette: `seismic`, Normalized by Columns.
 
 ## Repository:

@@ -35,6 +35,7 @@ Version: 1.0.2
 # Import dependencies
 import argparse
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 import os
 import pandas as pd
 import seaborn as sns
@@ -43,7 +44,7 @@ import sys
 # Define script name and version information
 script_name = os.path.basename(sys.argv[0])
 script_version = "1.0.2"
-current_version_date = "DATE:2025/04/03"          # Script version date
+current_version_date = "DATE:2025/04/04"          # Script version date
 #-------------------------------------------------------------------------------
 
 def main():
@@ -147,7 +148,7 @@ def main():
     file_format = args.format
     resolution = args.resolution
     correction = args.correction
-    palette = args.palette                        # Selected color palette
+    palette = args.palette  # Selected color palette
 
     # Check if the data file exists and is readable
     if not os.path.exists(data_file) or not os.access(data_file, os.R_OK):
@@ -240,8 +241,15 @@ def main():
         )
     )
 
-    # Calculate the mean value to be used for dynamic text color adjustment
+    # Calculate the mean value to be used for dynamic text color adjustment (original method)
     threshold_value_adjusted = df_numerical.values.mean()
+
+    # Get the colormap object for the selected palette
+    cmap = plt.get_cmap(palette)
+    # Compute the min and max of the normalized data for later use
+    data_vmin = df_numerical.values.min()
+    data_vmax = df_numerical.values.max()
+    data_range = data_vmax - data_vmin if data_vmax != data_vmin else 1
 
     # Generate the heatmap using seaborn with the selected palette
     try:
@@ -258,14 +266,34 @@ def main():
         # Set the heatmap title with styling
         heatmap.set_title(title, fontsize=18, color="darkblue", weight="bold")
 
-        # Adjust text color in each cell based on the value and correction factor
+        # Adjust text color in each cell based on the palette selected.
+        # For problematic palettes, use a method based on normalized cell value.
         for text, value in zip(heatmap.texts, df_numerical.values.flatten()):
-            if value > correction * threshold_value_adjusted:
-                text.set_color("white")           # High values get white text
-            elif value > threshold_value_adjusted:
-                text.set_color("black")           # Moderately high values get black text
+            # Determine normalized value in [0, 1]
+            norm_val = (value - data_vmin) / data_range
+            if palette in ["viridis"]:
+                # For viridis, compute luminance of the background color.
+                bg_color = cmap(norm_val)
+                # Compute luminance using ITU-R BT.601 luma formula
+                luminance = 0.299 * bg_color[0] + 0.587 * bg_color[1] + 0.114 * bg_color[2]
+                if luminance < 0.5:
+                    text.set_color("white")
+                else:
+                    text.set_color("black")
+            elif palette in ["coolwarm", "RdYlGn", "bwr", "seismic"]:
+                # For diverging palettes, use a threshold on the normalized value.
+                if norm_val < 0.3 or norm_val > 0.7:
+                    text.set_color("white")
+                else:
+                    text.set_color("black")
             else:
-                text.set_color("white")           # Lower values get white text
+                # For other palettes (e.g., Blues, YlGnBu), use the original correction factor logic.
+                if value > correction * threshold_value_adjusted:
+                    text.set_color("white")
+                elif value > threshold_value_adjusted:
+                    text.set_color("black")
+                else:
+                    text.set_color("darkblue")
 
         # Set row labels (y-axis) to italic
         for text in heatmap.get_yticklabels():

@@ -71,7 +71,7 @@
 ## Script_Version:
 
 	--------------------------------------------------------------------------------
-	v1.0.2
+	v1.0.3
 	--------------------------------------------------------------------------------
 
 ## Script_Logic:
@@ -93,44 +93,44 @@ See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/M
 ## Script_Flags:
 
 	--------------------------------------------------------------------------------
-	FLAG:           "-t", "--title"
+	FLAG:           "--title"
     REQUIRED:       Yes
     FORMAT:         Alphanumeric String
     DEFAULT:        No default
     HELP:           Title for the heatmap (use '\\n' for new lines)
 	----------------------------------------------------------------
-	FLAG:           "-d", "--data"
+	FLAG:           "--data"
     REQUIRED:       Yes
     FORMAT:         Alphanumeric String
     DEFAULT:        No default
     HELP:           Path to the TSV file containing numeric data with headers
 	----------------------------------------------------------------
-    FLAG:           "-f", "--format"
+    FLAG:           "--format"
     REQUIRED:       No
     FORMAT:         String
 	CHOICES:        png, pdf
     DEFAULT:        png
     HELP:           Output file format (default: png)
 	----------------------------------------------------------------
-    FLAG:           "-r", "--resolution"
+    FLAG:           "--resolution"
     REQUIRED:       No
     FORMAT:         Integer
     DEFAULT:        300
     HELP:           Resolution for PNG output in DPI (default: 300, ignored for PDF)
 	--------------------------------------------------------------------------------
-    FLAG:           "-s", "--size"
+    FLAG:           "--size"
     REQUIRED:       No
 	FORMAT:         String
     CHOICES:        small, large
     HELP:           Override preset font sizes (optional)
 	---------------------------------------------------------------
-    FLAG:           "-c", "--correction"
+    FLAG:           "--correction"
     REQUIRED:       Yes
 	FORMAT:         Float
     DEFAULT:        2
     HELP:           Font color mean correction value (default: 2)
 	---------------------------------------------------------------
-    FLAG:           "-p", "--palette"
+    FLAG:           "--palette"
     REQUIRED:       No
 	FORMAT:         Alphanumeric String
     CHOICES:        'Blues', 'viridis', 'coolwarm', 'YlGnBu', 'RdYlGn', 'bwr', 'seismic'
@@ -158,13 +158,28 @@ See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/M
 	FORMAT:         Integer
 	DEFAULT:        12
 	HELP:           Override cell annotation font size (e.g., 20)
+	                Font Size Default for Large Tables: 8
+					Font Size Default for Small Tables: 12
 	---------------------------------------------------------------
+	FLAG:           "cell_height"
+	REQUIRED:       No
+	FORMAT:         Integer
+	DEFAULT:        1.5
+	HELP:           Set the height (in inches) for each cell
+	                Figure height is computed as (number of rows) x (cell height)
+    ---------------------------------------------------------------
     FLAG:           "-v", "--version"
     REQUIRED:       No
     ACTION:         version
     FORMAT:         Alphanumeric String
     HELP:           Show program version's number and exit
 	--------------------------------------------------------------------------------
+    FLAG:           "-h", "--help"
+    REQUIRED:       No
+    ACTION:         help
+    FORMAT:         Alphanumeric String
+    HELP:           show this help message and exit
+    --------------------------------------------------------------------------------
 
 ## Dependencies:
 

@@ -20,35 +20,43 @@
     Field_05  <tab> 4000000   <tab> 400000    <tab> 40000 <tab> 4000
 	```
 + ### Understand the Command-Line Options:
-  + Title (`-t`/`--title`):
+  + Title (`--title`):
     + Provide a title for your heatmap.
 	+ You can insert line breaks using the literal string '\n'.
-  + Data (`-d`/`--data`):
+  + Data (`--data`):
     + The path to your TSV file containing numeric data.
-  + Format (`-f`/`--format`):
+  + Format (`--format`):
     + Specify the output file format. Default is `png`. Use pdf if desired.
-  + Resolution (`-r`/`--resolution`):
+  + Resolution (`--resolution`):
     + For PNG outputs, specify the DPI (dots per inch).
 	+ The default is 300 DPI (this is ignored if you choose PDF).
-  + Size (`-s`/`--size`):
-    + (Optional) Override the auto-detection of font sizes
+  + Size (`--size`):
+    + (Optional) Override the auto-detection of font sizes.
 	  by specifying small (font size = 8) or large (font size = 12.
-  + Correction (`-c`/`--correction`):
+  + Correction (`--correction`):
     + Adjust the threshold factor for text color contrast. Default is 2.
 	+ Numerical values lower than '1' are acceptable.
-  + Palette (`-p`/`--palette`):
+  + Palette (`--palette`):
     + Choose a color scheme for the heatmap.
-	+ Available options include `Blues` (default), `viridis`, `coolwarm`, `YlGnBu`,
-	  `RdYlGn`, `bwr`, and `seismic`.
+	+ Available options include: `Blues` (default),
+	  `viridis`, `coolwarm`, `YlGnBu`, `RdYlGn`, `bwr`, and `seismic`.
 	+ The options provided to this flag must be entered in a case-sensitive manner.
   + Normalize Rows (`--normalize_rows`):
     + Normalize each row independently (min-max scaling).
   + Normalize Columns (`--normalize_columns`):
     + Normalize each column independently (min-max scaling).
   + Cell Font Size (`--cell_font_size`):
-    + Override cell annotation font size for another size (e.g., 20)
+    + Override cell annotation font size for another size (e.g., 20).
+	+ Font Size Default for Large Tables: 8.
+	+ Font Size Default for Small Tables: 12.
+  + Cell Height (`--cell_height`):
+    + Set the height (in inches) for each cell.
+    + Figure height is computed as (number of rows) x (cell height).
+    + Default: 1.5
   + Version (`-v`/`--version`):
     + Show the script’s version number.
+  + Help (`-h`/`--help`):
+    + show this help message and exit.
 + ### Understand Row Normalization:
   + Step 1: For each row, find the smallest (min) and largest (max) values.
   + Step 2: Compute the range (max minus min) for each row.
@@ -68,11 +76,11 @@
     `Table_01.tsv` data, let's issue the following commands:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p Blues
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette Blues
 	```
   + This will produce the following table:
 
@@ -81,8 +89,8 @@
 <p align="center">
 Color Palette: `Blues`, No Normalization.
 
-  + The `-f` or `--format` option request the table to be generated in `png` format at a `300 dpi` resolution,
-  + The `-p` or `--palette` option requests the table table to be generated using the `Blues` palette.
+  + The `--format` option request the table to be generated in `png` format at a `300 dpi` resolution,
+  + The `--palette` option requests the table table to be generated using the `Blues` palette.
   + The script will read your data, generate the heatmap,
     and save it to a file with the same base name as your data
 	file but with the appropriate extension (either `.png` or `.pdf`).
@@ -93,11 +101,11 @@ Color Palette: `Blues`, No Normalization.
   + To normalize the output color of the cells by rows, let's issue the following command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p Blues \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette Blues \
 	--normalize_rows
 	```
   + Which results in the following table:
@@ -111,11 +119,11 @@ Color Palette: `Blues`, Normalized by Rows.
   + To normalize the output color of the cells by columns, let's issue the following command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p Blues \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette Blues \
 	--normalize_columns
 	```
   + Which results in the following table:
@@ -131,11 +139,11 @@ Color Palette: `Blues`, Normalized by Columns.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p viridis
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette viridis
 	```
   + Produces the following table:
 
@@ -148,11 +156,11 @@ Color Palette: `viridis`, No Normalization.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p viridis \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette viridis \
 	--normalize_rows
 	```
   + Produces the following table:
@@ -165,11 +173,11 @@ Color Palette: `viridis`, Normalized by Rows.
 + ### Using the `viridis` Color Palette With Columns Normalization:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p viridis \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette viridis \
 	--normalize_columns
 	```
   + Produces the following table:
@@ -183,11 +191,11 @@ Color Palette: `viridis`, Normalized by Columns.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p coolwarm
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette coolwarm
 	```
   + Produces the following table:
 
@@ -200,11 +208,11 @@ Color Palette: `coolwarm`, No Normalization.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p coolwarm \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette coolwarm \
 	--normalize_rows
 	```
   + Produces the following table:
@@ -217,11 +225,11 @@ Color Palette: `coolwarm`, Normalized by Rows.
 + ### Using the `coolwarm` Color Palette With Columns Normalization:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p coolwarm \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette coolwarm \
 	--normalize_columns
 	```
   + Produces the following table:
@@ -235,11 +243,11 @@ Color Palette: `coolwarm`, Normalized by Columns.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p YlGnBu
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette YlGnBu
 	```
   + Produces the following table:
 
@@ -252,11 +260,11 @@ Color Palette: `YlGnBu`, No Normalization.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p YlGnBu \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette YlGnBu \
 	--normalize_rows
 	```
   + Produces the following table:
@@ -269,11 +277,11 @@ Color Palette: `YlGnBu`, Normalized by Rows.
 + ### Using the `YlGnBu` Color Palette With Columns Normalization:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p YlGnBu \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette YlGnBu \
 	--normalize_columns
 	```
   + Produces the following table:
@@ -287,11 +295,11 @@ Color Palette: `YlGnBu`, Normalized by Columns.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p RdYlGn
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette RdYlGn
 	```
   + Produces the following table:
 
@@ -304,11 +312,11 @@ Color Palette: `RdYlGn`, No Normalization.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p RdYlGn \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette RdYlGn \
 	--normalize_rows
 	```
   + Produces the following table:
@@ -321,11 +329,11 @@ Color Palette: `RdYlGn`, Normalized by Rows.
 + ### Using the `RdYlGn` Color Palette With Columns Normalization:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p RdYlGn \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette RdYlGn \
 	--normalize_columns
 	```
   + Produces the following table:
@@ -339,11 +347,11 @@ Color Palette: `RdYlGn`, Normalized by Columns.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p bwr
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette bwr
 	```
   + Produces the following table:
 
@@ -356,11 +364,11 @@ Color Palette: `bwr`, No Normalization.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p bwr \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette bwr \
 	--normalize_rows
 	```
   + Produces the following table:
@@ -373,11 +381,11 @@ Color Palette: `bwr`, Normalized by Rows.
 + ### Using the `bwr` Color Palette With Columns Normalization:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p bwr \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette bwr \
 	--normalize_columns
 	```
   + Produces the following table:
@@ -391,11 +399,11 @@ Color Palette: `bwr`, Normalized by Columns.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p seismic
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette seismic
 	```
   + Produces the following table:
 
@@ -408,11 +416,11 @@ Color Palette: `seismic`, No Normalization.
   + The command:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p seismic \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette seismic \
 	--normalize_rows
 	```
   + Produces the following table:
@@ -425,11 +433,11 @@ Color Palette: `seismic`, Normalized by Rows.
 + ### Using the `seismic` Color Palette With Columns Normalization:
     ```
 	python3 Heatmap_Tables.py \
-	-t "HeatMap Tables\nExample" \
-	-d Table_00.tsv \
-	-f png \
-	-r 300 \
-	-p seismic \
+	--title "HeatMap Tables\nExample" \
+	--data Table_00.tsv \
+	--format png \
+	--resolution 300 \
+	--palette seismic \
 	--normalize_columns
 	```
   + Produces the following table:

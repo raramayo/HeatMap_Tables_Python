@@ -27,7 +27,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------------
 Version Number:
-Version: 1.0.2
+Version: 1.0.3
 --------------------------------------------------------------------------------
 """
 
@@ -43,8 +43,8 @@ import sys
 #-------------------------------------------------------------------------------
 # Define script name and version information
 script_name = os.path.basename(sys.argv[0])
-script_version = "1.0.2"
-current_version_date = "DATE:2025/04/04"          # Script version date
+script_version = "1.0.3"
+current_version_date = "DATE:2025/04/11"          # Script version date
 #-------------------------------------------------------------------------------
 
 def main():
@@ -55,7 +55,6 @@ def main():
     )
     # Title for the heatmap; use "\n" in the string for new lines.
     parser.add_argument(
-        "-t",
         "--title",
         type=str,
         required=True,
@@ -63,7 +62,6 @@ def main():
     )
     # Path to the TSV data file (tab-separated values)
     parser.add_argument(
-        "-d",
         "--data",
         type=str,
         required=True,
@@ -71,24 +69,23 @@ def main():
     )
     # Output file format: default is "png"
     parser.add_argument(
-        "-f",
         "--format",
         type=str,
         choices=["png", "pdf"],
         default="png",
-        help="Output file format (default: png)"
+        help="Output file format\n"
+             "Default: png"
     )
     # Resolution for PNG output in DPI; ignored if output is PDF (default: 300)
     parser.add_argument(
-        "-r",
         "--resolution",
         type=int,
         default=300,
-        help="Resolution for PNG output in DPI (default: 300, ignored for PDF)"
+        help="Resolution for PNG output in DPI\n"
+             "Default: 300, ignored for PDF"
     )
     # Optional override for preset font sizes; choices are "small" or "large"
     parser.add_argument(
-        "-s",
         "--size",
         type=str,
         choices=["small", "large"],
@@ -96,21 +93,21 @@ def main():
     )
     # Correction factor for text color thresholding (default: 2)
     parser.add_argument(
-        "-c",
         "--correction",
         type=float,
         default=2,
-        help="Font color mean correction value (default: 2)"
+        help="Font color mean correction value\n"
+             "Default: 2"
     )
     # Color palette option for the heatmap
     parser.add_argument(
-        "-p",
         "--palette",
         type=str,
         choices=["Blues", "viridis", "coolwarm", "YlGnBu", "RdYlGn", "bwr", "seismic"],
         default="Blues",
-        help="Color scheme for the heatmap (default: Blues)."
-             " Choices: 'Blues', 'viridis', 'coolwarm', 'YlGnBu', 'RdYlGn', 'bwr', 'seismic'"
+        help="Color scheme for the heatmap\n"
+             "Default: Blues\n"
+             "Choices: 'Blues', 'viridis', 'coolwarm', 'YlGnBu', 'RdYlGn', 'bwr', 'seismic'"
     )
     # Option to normalize rows independently
     parser.add_argument(
@@ -129,7 +126,18 @@ def main():
         "--cell_font_size",
         type=int,
         default=None,
-        help="Override cell annotation font size (e.g., 20)"
+        help="Override cell annotation font size (e.g., 20).\n"
+             "Font Size Default for Large Tables: 8\n"
+             "Font Size Default for Small Tables: 12"
+    )
+    # NEW: Option to override the height of each cell (in inches)
+    parser.add_argument(
+        "--cell_height",
+        type=float,
+        default=None,
+        help="Set the height (in inches) for each cell.\n"
+             "Figure height is computed as (number of rows) x (cell height).\n"
+             "Default: 1.5"
     )
     # Version flag to show script version and exit
     parser.add_argument(
@@ -233,13 +241,16 @@ def main():
     # Set the overall font scale for seaborn plots
     sns.set(font_scale=font_scale)
 
-    # Dynamically set figure size based on number of columns and rows
-    plt.figure(
-        figsize=(
-            max(8.5, n_cols * 0.5),
-            max(11, n_rows * 0.3)
-        )
-    )
+    # Compute figure dimensions, allowing control of cell height.
+    if args.cell_height is not None:
+        cell_height = args.cell_height
+    else:
+        # Default cell height in inches per row; you can adjust this value as needed.
+        cell_height = 1.5
+    figure_width = max(8.5, n_cols * 0.5)
+    # Use the product of number of rows and cell height instead of a minimum height.
+    figure_height = n_rows * cell_height
+    plt.figure(figsize=(figure_width, figure_height))
 
     # Calculate the mean value to be used for dynamic text color adjustment (original method)
     threshold_value_adjusted = df_numerical.values.mean()

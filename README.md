@@ -78,7 +78,7 @@
 
 <pre>
 --------------------------------------------------------------------------------
-See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Code_Overview.md" target="_blank">Code_Overview.md</a>
+<a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Code_Overview.md" target="_blank">Code_Overview.md</a>
 --------------------------------------------------------------------------------
 </pre>
 
@@ -86,7 +86,7 @@ See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/C
 
 <pre>
 --------------------------------------------------------------------------------
-See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Mini_Tutorial.md" target="_blank">Mini_Tutorial.md</a>
+<a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Mini_Tutorial.md" target="_blank">Mini_Tutorial.md</a>
 --------------------------------------------------------------------------------
 </pre>
 
@@ -220,7 +220,7 @@ See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/M
 
 <pre>
 --------------------------------------------------------------------------------
-See: <a href="https://github.com/raramayo/HeatMap_Tables_Python" target="_blank">HeatMap_Tables_Python</a>
+<a href="https://github.com/raramayo/HeatMap_Tables_Python" target="_blank">HeatMap_Tables_Python</a>
 --------------------------------------------------------------------------------
 </pre>
 
@@ -228,6 +228,6 @@ See: <a href="https://github.com/raramayo/HeatMap_Tables_Python" target="_blank"
 
 <pre>
 --------------------------------------------------------------------------------
-See: <a href="https://github.com/raramayo/HeatMap_Tables_Python/issues" target="_blank">HeatMap_Tables_Python_Issues</a>
+<a href="https://github.com/raramayo/HeatMap_Tables_Python/issues" target="_blank">HeatMap_Tables_Python_Issues</a>
 --------------------------------------------------------------------------------
 </pre>

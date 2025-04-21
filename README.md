@@ -97,13 +97,13 @@
 	--------------------------------------------------------------------------------
 	FLAG:           "--title"
     REQUIRED:       Yes
-    FORMAT:         Alphanumeric String
+    FORMAT:         Alphanumeric String = '--title'
     DEFAULT:        No default
     HELP:           Title for the heatmap (use '\\n' for new lines)
 	----------------------------------------------------------------
 	FLAG:           "--data"
     REQUIRED:       Yes
-    FORMAT:         Alphanumeric String
+    FORMAT:         Alphanumeric String = '--data'
     DEFAULT:        No default
     HELP:           Path to the TSV file containing numeric data with headers
 	----------------------------------------------------------------

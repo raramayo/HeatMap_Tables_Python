@@ -2,7 +2,7 @@
 
 # HeatMap_Tables Mini Tutorial
 
-## How to Use the Script to Generate Heat Map Tables
+## How to Use the Script to Generate Heat Map Tables:
 
 + ### Prepare Your Environment:
 
@@ -569,6 +569,27 @@ Color Palette: `seismic`, Normalized by Rows.
 <img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_21_seismic_ncol.png" width="800" height="800" style="display: block; margin: 0 auto">
 <p align="center">
 Color Palette: `seismic`, Normalized by Columns.
+
++ ### Version:
+
+  ```
+  python3 HeatMap_Tables.py -v
+
+  or
+
+  python3 HeatMap_Tables.py --version
+  ```
+
++ ### Help:
+
+  ```
+  python3 HeatMap_Tables.py -v
+
+  or
+
+  python3 HeatMap_Tables.py --version
+  ```
+
 
 ## Repository:
 

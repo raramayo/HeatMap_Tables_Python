@@ -110,55 +110,59 @@
     FLAG:           "--format"
     REQUIRED:       No
     FORMAT:         String
-	CHOICES:        png, pdf
-    DEFAULT:        png
-    HELP:           Output file format (default: png)
+	CHOICES:        'png', 'pdf'
+    DEFAULT:        'png'
+    HELP:           Output file format
 	----------------------------------------------------------------
     FLAG:           "--resolution"
     REQUIRED:       No
     FORMAT:         Integer
-    DEFAULT:        300
-    HELP:           Resolution for PNG output in DPI (default: 300, ignored for PDF)
+    DEFAULT:        '300'
+    HELP:           Resolution for 'png' output in 'DPI'
+	                Ignored for 'pdf'
 	--------------------------------------------------------------------------------
     FLAG:           "--size"
     REQUIRED:       No
 	FORMAT:         String
-    CHOICES:        small, large
+    CHOICES:        'small', 'large'
+	DEFAULT:        No default
     HELP:           Override preset font sizes (optional)
 	---------------------------------------------------------------
     FLAG:           "--correction"
     REQUIRED:       Yes
 	FORMAT:         Float
-    DEFAULT:        2
-    HELP:           Font color mean correction value (default: 2)
+    DEFAULT:        '2'
+    HELP:           Font color mean correction value
 	---------------------------------------------------------------
     FLAG:           "--palette"
     REQUIRED:       No
 	FORMAT:         Alphanumeric String
     CHOICES:        'Blues', 'viridis', 'coolwarm', 'YlGnBu', 'RdYlGn', 'bwr', 'seismic'
 	DEFAULT:        'Blues'
-    HELP:           Color scheme for the heatmap.
+    HELP:           Color scheme for the heatmap
 	---------------------------------------------------------------
     FLAG:           "--normalize_rows"
 	REQUIRED:       No
-	FORMAT:         Alphanumeric String
-	ACTION:         "Store_True"
-    CHOICES:        "Omitting the flag:  == "False""
-                    "Providing the flag: == "True""
+	FORMAT:         Alphanumeric String = '--normalize_rows'
+    CHOICES:        Omitting the flag:  == 'False'
+                    Providing the flag: == 'True'
+	ACTION:         store_true
+	DEFAULT:        'False'
 	HELP:           Normalize each row independently (min-max scaling)
 	---------------------------------------------------------------
     FLAG:           "--normalize_columns"
 	REQUIRED:       No
-	FORMAT:         Alphanumeric String
-	ACTION:         "Store_True"
-    CHOICES:        "Omitting the flag:  == "False""
-                    "Providing the flag: == "True""
+	FORMAT:         Alphanumeric String = '--normalize_columns'
+    CHOICES:        Omitting the flag:  == 'False'
+                    Providing the flag: == 'True'
+	ACTION:         store_true
+	DEFAULT:        'False'
 	HELP:           Normalize each column independently (min-max scaling)
 	---------------------------------------------------------------
     FLAG:           "--cell_font_size"
 	REQUIRED:       No
 	FORMAT:         Integer
-	DEFAULT:        12
+	DEFAULT:        '12'
 	HELP:           Override cell annotation font size (e.g., 20)
 	                Font Size Default for Large Tables: 8
 					Font Size Default for Small Tables: 12
@@ -166,7 +170,7 @@
 	FLAG:           "cell_height"
 	REQUIRED:       No
 	FORMAT:         Integer
-	DEFAULT:        1.5
+	DEFAULT:        '1.5'
 	HELP:           Set the height (in inches) for each cell
 	                Figure height is computed as (number of rows) x (cell height)
     ---------------------------------------------------------------

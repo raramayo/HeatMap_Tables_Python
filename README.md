@@ -79,17 +79,13 @@
 ## Code_Overview:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Code_Overview.md" target="_blank">Code_Overview.md</a>
---------------------------------------------------------------------------------
 </pre>
 
 ## Usage:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Docs/Mini_Tutorial.md" target="_blank">Mini_Tutorial.md</a>
---------------------------------------------------------------------------------
 </pre>
 
 ## Flags:
@@ -225,15 +221,11 @@
 ## Repository:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/HeatMap_Tables_Python" target="_blank">HeatMap_Tables_Python</a>
---------------------------------------------------------------------------------
 </pre>
 
 ## Issues:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/HeatMap_Tables_Python/issues" target="_blank">HeatMap_Tables_Python_Issues</a>
---------------------------------------------------------------------------------
 </pre>

@@ -16,29 +16,29 @@ input data dimensions.
 
 Key Functions:
 
-### Argument Parsing:
++ Argument Parsing:
 
 Uses Python’s argparse to capture the title, data file, output format, resolution,
 optional size settings, and a correction factor for text color thresholds.
 
-### Data Loading and Preprocessing:
++ Data Loading and Preprocessing:
 
 Reads the TSV file with Pandas, filters out unwanted rows (e.g., those with "TOTAL:"),
 converts specific percentage values if necessary, and ensures all selected columns are
 numeric.
 
-### Dynamic Visualization Settings:
++ Dynamic Visualization Settings:
 
 Auto-detects if the data is "large" (more than 50 rows or 6 columns) and adjusts
 font sizes and figure dimensions accordingly.
 
-### Heatmap Generation:
++ Heatmap Generation:
 
 Uses Seaborn to create the heatmap. Data values are annotated in each cell,
 and text colors are dynamically adjusted based on how the cell’s value compares
 to the overall mean (modified by a correction factor).
 
-### Output:
++ Output:
 
 Saves the generated heatmap as a PNG (with a configurable DPI) or as a PDF.
 

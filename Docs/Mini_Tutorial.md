@@ -151,7 +151,7 @@ python3 Heatmap_Tables.py \
 <p align="center">
 <img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_01_Blues.png" width="800" height="800" style="display: block; margin: 0 auto">
 <p align="center">
-Color Palette: <Blues>, No Normalization.
+Color Palette: <code>Blues</code>, No Normalization.
 
 + The `--format` option request the table to be generated in `png` format at a `300 dpi` resolution,
 

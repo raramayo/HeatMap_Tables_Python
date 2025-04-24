@@ -14,7 +14,7 @@ visualization.
 It is designed to be flexible by adjusting fonts and figure size based on the
 input data dimensions.
 
-Key Functions:
++ ### Key Functions:
 
 + Argument Parsing:
 

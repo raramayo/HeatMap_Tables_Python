@@ -184,6 +184,7 @@ HELP:           show this help message and exit
 ## Dependencies:
 
 | Name       | URL                                       |
+|------------|-------------------------------------------|
 | Python3    | https://www.python.org/downloads/         |
 | Matplotlib | https://matplotlib.org/                   |
 |            | https://pypi.org/project/matplotlib/      |

@@ -7,7 +7,6 @@
 ### Prepare Your Environment:
 
 + Ensure you have `Python 3` installed.
-
 + Install required libraries if not already available:
 
 ```
@@ -15,9 +14,7 @@ pip install matplotlib pandas seaborn
 ```
 
 + Save your data in a TSV file (tab-separated values) with headers.
-
 + The first column should be used as the index.
-
 + Example (`Table_00.tsv`):
 
 ```
@@ -100,31 +97,22 @@ Default: 1.5
 Show the script’s version number.
 
 + Help (`-h`/`--help`):
-
 + show this help message and exit.
 
 ### Understand Row Normalization:
 
 + Step 1: For each row, find the smallest (min) and largest (max) values.
-
 + Step 2: Compute the range (max minus min) for each row.
-
 + Step 3: If a row’s range is 0 (i.e., all values are equal), set the range to 1 to prevent division by zero.
-
 + Step 4: Transform each element by subtracting the row’s minimum and then dividing by the row’s range.
-
 + The result is that every value in the row is scaled between 0 (original minimum) and 1 (original maximum).
 
 ### Understand Column Normalization:
 
 + Step 1: For each column, determine the minimum and maximum values.
-
 + Step 2: Compute the range for each column.
-
 + Step 3: If any column’s range is 0 (i.e., every value is the same), set that range to 1 to avoid division errors.
-
 + Step 4: Normalize each column by subtracting the column minimum from every element and then dividing by the column’s range.
-
 + This scales every value in each column to fall between 0 and 1.
 
 ### Run the Script Using the `Blues` Color Palette Without Any Normalization:
@@ -154,13 +142,10 @@ python3 Heatmap_Tables.py \
 Color Palette: <code>Blues</code>, No Normalization.
 
 + The `--format` option request the table to be generated in `png` format at a `300 dpi` resolution,
-
 + The `--palette` option requests the table table to be generated using the `Blues` palette.
-
 + The script will read your data, generate the heatmap,
     and save it to a file with the same base name as your data
 	file but with the appropriate extension (either `.png` or `.pdf`).
-
 + The heatmap will have dynamic text color based on the data values,
 	customized titles, and axes labels, making it easier to interpret the data.
 
@@ -207,7 +192,6 @@ python3 Heatmap_Tables.py \
 Color Palette: <code>Blues</code>, Normalized by Columns.
 
 + Similarly, commands equivalent to the ones above can be issued to generate tables without any normalization, or normalized by either rows or columns using different color palettes.
-
 + In the tables presented below, note how the font color changes according to the color palette used.
 
 ### Using the `viridis` Color Palette Without Any Normalization:

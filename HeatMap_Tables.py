@@ -44,7 +44,7 @@ import sys
 # Define script name and version information
 script_name = os.path.basename(sys.argv[0])
 script_version = "1.0.4"
-current_version_date = "DATE:2025/04/21"          # Script version date
+current_version_date = "DATE:2025/04/24"          # Script version date
 #-------------------------------------------------------------------------------
 
 def main():

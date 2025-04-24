@@ -183,7 +183,7 @@ python3 Heatmap_Tables.py \
 <p align="center">
 <img src="https://github.com/raramayo/HeatMap_Tables_Python/blob/main/Images/Table_00_02_Blues_nrow.png" width="800" height="800" style="display: block; margin: 0 auto">
 <p align="center">
-Color Palette: <code class="language-markdown"> Blues </code>, Normalized by Rows.
+Color Palette: 'Blues', Normalized by Rows.
 
 ### Using the `Blues` Color Palette With Columns Normalization:
 
